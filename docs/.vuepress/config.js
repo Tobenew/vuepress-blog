@@ -16,6 +16,9 @@ module.exports = {
   },
   themeConfig: {
     nav:[ // 导航栏配置
+      {text: 'HTML', link: '/html/vue/vue.html' },
+      {text: 'CSS', link: '/css/vue/vue.html' },
+      {text: 'JavaScript', link: '/javascript/vue/vue.html' },
       {text: '前端框架', link: '/frame/vue/vue.html' },
       {text: '前端基础', link: '/accumulate/1.html' },
       {text: '算法题库', link: '/algorithm/'},

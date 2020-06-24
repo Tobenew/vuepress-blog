@@ -1,7 +1,7 @@
 ---
 home: true
 heroImage: /images/photo.jpg
-actionText: 快速上手 →
+actionText: 芝麻开门 →
 actionLink: guide.html
 features:
 - title: 大前端
