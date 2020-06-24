@@ -16,7 +16,7 @@ module.exports = {
   },
   themeConfig: {
     nav:[ // 导航栏配置
-      {text: 'HTML', link: '/html/vue/vue.html' },
+      {text: 'HTML', link:'/html/base.html' },
       {text: 'CSS', link: '/css/vue/vue.html' },
       {text: 'JavaScript', link: '/javascript/vue/vue.html' },
       {text: '前端框架', link: '/frame/vue/vue.html' },
@@ -26,6 +26,22 @@ module.exports = {
       {text: '微博', link: 'https://baidu.com'}      
     ],
     sidebar:{ // 侧边栏配置
+      '/html/': [
+        {
+          title: 'HTML基础',
+          children: [
+            '/html/base.html',
+            '/html/html-tags.html'
+          ]
+        },
+        {
+          title: 'HTML基础2',
+          children: [
+            '/html/base.html',
+            '/html/html-tags.html'
+          ]
+        }
+      ],
       '/frame/': [
         {
           title: '前端框架',
