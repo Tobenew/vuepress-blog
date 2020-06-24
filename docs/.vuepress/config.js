@@ -1,5 +1,5 @@
 module.exports = {
-  title: '个人主页',
+  title: '小尹的个人博客',
   description: 'Personal Website',
   head: [ // 注入到当前页面的 HTML <head> 中的标签
     ['link', { rel: 'icon', href: '/images/photo.jpg' }],
