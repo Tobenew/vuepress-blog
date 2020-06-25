@@ -31,7 +31,9 @@ module.exports = {
           title: 'HTML基础',
           children: [
             '/html/base.html',
-            '/html/html-tags.html'
+            '/html/html-tags.html',
+            '/html/html-dom.html'
+
           ]
         },
         {
