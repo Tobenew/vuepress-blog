@@ -85,7 +85,7 @@ const inerval = setInterval(() => {
 
 具体效果可以参看下图：
 
-![Image text](https://s0.lgstatic.com/i/image/M00/07/67/CgqCHl65LJGAR25PAAAXBLXRFXg133.gif)
+![Image text](https://s0.lgstatic.com/i/image/M00/07/0E/Ciqc1F647iiAZx3cAAB1ewBzlh0431.png)
 
 其中，绿色的线表示执行解析 HTML ，蓝色的线表示请求文件，红色的线表示执行文件。
 
@@ -100,6 +100,7 @@ const inerval = setInterval(() => {
 - dns-prefetch. 当 link 标签的 rel 属性值为“dns-prefetch”时，浏览器会对某个域名预先进行 DNS 解析并缓存。这样，当浏览器在请求同域名资源的时候，能省去从域名查询 IP 的过程，从而减少时间损耗。
 下图是淘宝网设置的 DNS 预解析。
 
+![Image text](https://s0.lgstatic.com/i/image/M00/07/0E/Ciqc1F647jWAHmc_AAAiNGoHmY8154.png)
 
 - preconnect。让浏览器在一个 HTTP 请求正式发给服务器前预先执行一些操作，这包括 DNS 解析、TLS 协商、TCP 握手，通过消除往返延迟来为用户节省时间。
 
@@ -108,6 +109,8 @@ const inerval = setInterval(() => {
 - prerender。浏览器不仅会加载资源，还会解析执行页面，进行预渲染。
 
 这几个属性值恰好反映了浏览器获取资源文件的过程，在这里我绘制了一个流程简图，方便你记忆。
+
+![Image text](https://s0.lgstatic.com/i/image/M00/07/0E/Ciqc1F647j-AFiBtAABWh7ld3uA965.png)
 
 浏览器获取资源文件的流程
 
@@ -121,11 +124,13 @@ const inerval = setInterval(() => {
 
 例如，在百度中搜索“拉勾”，就会发现网站的描述信息，这些描述信息就是通过 meta 标签专门为搜索引擎设置的，目的是方便用户预览搜索到的结果。
 
+![Image text](https://s0.lgstatic.com/i/image/M00/07/0F/Ciqc1F647kmAMJF6AABXM1K7WdY483.png)
+
 为了让搜索引擎更好地识别页面，除了描述信息之外还可以使用关键字，这样即使页面其他地方没有包含搜索内容，也可以被搜索到（当然搜索引擎有自己的权重和算法，如果滥用关键字是会被降权的，比如 Google 引擎就会对堆砌大量相同关键词的网页进行惩罚，降低它被搜索到的权重）。
 
 当我们搜索关键字“垂直互联网招聘”的时候搜索结果会显示拉勾网的信息，虽然显示的搜索内容上并没有看到“垂直互联网招聘”字样，这就是因为拉勾网页面中设置了这个关键字。
 
-
+![Image text](https://s0.lgstatic.com/i/image/M00/07/0F/Ciqc1F647lSAGbePAAEeMKqCVgw178.png)
 
 对应代码如下：
 ```
@@ -133,6 +138,8 @@ const inerval = setInterval(() => {
 ```
 
 在实际工作中，推荐使用一些关键字工具来挑选，比如 Google Trends、站长工具。下图是我使用站长工具搜索“招聘”关键字得到的结果，可以看到得到了相当关键的一些信息，比如全网搜索指数、关键词特点。
+
+![Image text](https://s0.lgstatic.com/i/image/M00/07/0F/CgqCHl647l2Abd9XAAEL0O2drYw681.png)
 
 ### 3.2 link 标签：减少重复
 
@@ -151,6 +158,8 @@ const inerval = setInterval(() => {
 当然，要合并网址还有其他的方式，比如使用站点地图，或者在 HTTP 请求响应头部添加 rel="canonical"。这里，我就不展开介绍了，道理都是相通的，你平时可以多探索和实践。
 
 ## 延伸内容：OGP（开放图表协议）
+
+![Image text](https://s0.lgstatic.com/i/image/M00/07/68/Ciqc1F65LLeAZf33AAAvMXPozlk099.png)
 
 前面我们说了 HTML5 标准的一些标签和属性，下面再延伸说一说基于 meta 标签扩展属性值实现的第三方协议——OGP（Open Graph Protocal，开放图表协议 ）。
 
