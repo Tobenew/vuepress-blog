@@ -17,7 +17,7 @@ module.exports = {
   themeConfig: {
     nav:[ // 导航栏配置
       {text: 'HTML', link:'/html/base.html' },
-      {text: 'CSS', link: '/css/vue/vue.html' },
+      {text: 'CSS', link: '/css/base.html' },
       {text: 'JavaScript', link: '/javascript/vue/vue.html' },
       {text: '前端框架', link: '/frame/vue/vue.html' },
       {text: '前端基础', link: '/accumulate/1.html' },
@@ -32,15 +32,20 @@ module.exports = {
           children: [
             '/html/base.html',
             '/html/html-tags.html',
-            '/html/html-dom.html'
+            '/html/html-dom.html',
+            '/html/html-dom-scene.html',
+       
 
           ]
-        },
+        }
+      ],
+      '/css/': [
         {
-          title: 'HTML基础2',
+          title: 'CSS基础',
           children: [
-            '/html/base.html',
-            '/html/html-tags.html'
+            '/css/base.html',
+            '/css/flex.html',
+            '/css/manage.html',
           ]
         }
       ],
