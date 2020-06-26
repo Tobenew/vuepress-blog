@@ -46,6 +46,7 @@ module.exports = {
             '/css/base.html',
             '/css/flex.html',
             '/css/manage.html',
+            '/css/preHandle.html'            
           ]
         }
       ],
