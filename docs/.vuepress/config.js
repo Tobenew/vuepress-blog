@@ -18,7 +18,7 @@ module.exports = {
     nav:[ // 导航栏配置
       {text: 'HTML', link:'/html/base.html' },
       {text: 'CSS', link: '/css/base.html' },
-      {text: 'JavaScript', link: '/javascript/vue/vue.html' },
+      {text: 'JavaScript', link: '/javascript/base.html' },
       {text: '前端框架', link: '/frame/vue/vue.html' },
       {text: '前端基础', link: '/accumulate/1.html' },
       {text: '算法题库', link: '/algorithm/'},
@@ -33,9 +33,7 @@ module.exports = {
             '/html/base.html',
             '/html/html-tags.html',
             '/html/html-dom.html',
-            '/html/html-dom-scene.html',
-       
-
+            '/html/html-dom-scene.html'
           ]
         }
       ],
@@ -47,6 +45,15 @@ module.exports = {
             '/css/flex.html',
             '/css/manage.html',
             '/css/preHandle.html'            
+          ]
+        }
+      ],
+      '/javascript/': [
+        {
+          title: 'JavaScript',
+          children: [
+            '/javascript/base.html'
+             
           ]
         }
       ],
