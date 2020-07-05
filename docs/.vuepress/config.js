@@ -53,7 +53,9 @@ module.exports = {
           title: 'JavaScript',
           children: [
             '/javascript/base.html',
-            '/javascript/whyJavascript.html'
+            '/javascript/whyJavascript.html',
+            '/javascript/async.html'
+
 
              
           ]

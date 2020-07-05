@@ -1,5 +1,5 @@
 ---
-title: 为什么说函数是 JavaScript 的一等公民？
+title: 02.this 原型链 作用域 闭包？
 date: 2020-06-24 18:04:55
 tags: html
 ---
@@ -59,11 +59,12 @@ fn2() // ?
 ```javascript
 function fn() {console.log(this)}
 function fn2() {fn()}
-var obj = {fn2}s
+var obj = {fn2}
 obj.fn2() // ?
 
 ```
 这里需要注意，调用函数 fn() 的是函数 fn2() 而不是 obj。虽然 fn2() 作为 obj 的属性调用，但 **fn2()中的 this 指向并不会传递给函数 fn()**， 所以答案也是 window（Node.js 下是 global）。
+
 （3）对象 dx 拥有数组属性 arr，在属性 arr 的 forEach 回调函数中输出 this，指向的是什么呢？
 ```javascript
 var dx = {
@@ -77,6 +78,7 @@ dx.arr.forEach(function() {console.log(this)}) // ?
 如果你看过 forEach 的说明文档便会知道，它有两个参数，第一个是回调函数，第二个是 this 指向的对象，这里只传入了回调函数，第二个参数没有传入，默认为 undefined，所以正确答案应该是输出全局对象。
 
 类似的，需要传入 this 指向的函数还有：every()、find()、findIndex()、map()、some()，在使用的时候需要特别注意。
+
 （4）前面提到通过类实例来调用函数时，this 会指向实例。那么如果像下面的代码，创建一个 fun 变量来引用实例 b 的 fn() 函数，当调用 fun() 的时候 this 会指向什么呢？
 ```javascript
 class B {
@@ -96,6 +98,7 @@ var arrow = {fn: () => {
 arrow.fn() // ?
 ```
 而严格模式下不会指定全局对象为默认调用对象，所以答案是 undefined。
+
 （5）ES6 新加入的箭头函数不会创建自己的 this，它只会从自己的作用域链的上一层继承 this。可以简单地理解为**箭头函数的 this 继承自上层的 this**，但在全局环境下定义仍会指向全局对象。
 ```javascript
 var arrow = {fn: () => {
@@ -152,7 +155,11 @@ add(1, 2)(3, 4, 5)(6) // 21
 ```
 对于不定参数的求和处理比较简单，很容易想到通过 arguments 或者扩展符的方式获取数组形式的参数，然后通过 reduce 累加求和。但如果直接返回结果那么后面的调用肯定会报错，所以每次返回的必须是函数，才能保证可以连续调用。也就是说 add 返回值既是一个可调用的函数又是求和的数值结果。
 
-要实现这个要求，我们必须知道函数相关的两个隐式转换函数 toString() 和 valueOf()。toString() 函数会在打印函数的时候调用，比如 console.log、valueOf 会在获取函数原始值时调用，比如加法操作。
+要实现这个要求，我们必须知道函数相关的**两个隐式转换函数 toString() 和 valueOf()**。
+
+toString() 函数会在打印函数的时候调用，比如 console.log、
+
+valueOf 会在获取函数原始值时调用，比如加法操作。
 
 具体代码实现如下，在 add() 函数内部定义一个 fn() 函数并返回。fn() 函数的主要职能就是拼接参数并返回自身，当调用 toString() 和 valueOf() 函数时对拼接好的参数进行累加求和并返回。
 ```javascript
